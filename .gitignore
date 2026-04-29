@@ -1,0 +1,28 @@
+node_modules/
+.env
+*.zip
+dist/
+build/
+.next/
+
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Optional
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
