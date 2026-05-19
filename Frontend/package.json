@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "cd revogue-frontend && next dev",
     "start:dev": "cd revogue-frontend && next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint ."
+    "build": "cd revogue-frontend && next build",
+    "start": "cd revogue-frontend && next start",
+    "lint": "eslint .",
+    "deploy": "node revogue-frontend/scripts/deploy-s3.js"
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.15.4",

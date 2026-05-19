@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Plus, Package, DollarSign, TrendingUp, Edit, Trash2 } from "lucide-react"
 import { AddProductModal } from "@/components/add-product-modal"
 import { useToast } from "@/hooks/use-toast"
+import { getApiUrl } from "@/lib/api-url"
 
 interface Product {
   id: string
@@ -63,7 +64,7 @@ export default function SellerDashboard() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/products/seller/my-products", {
+      const response = await fetch(`${getApiUrl()}/products/seller/my-products`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
@@ -127,7 +128,7 @@ export default function SellerDashboard() {
 
     const token = localStorage.getItem("token")
     try {
-      const response = await fetch(`http://localhost:3001/products/${id}`, {
+      const response = await fetch(`${getApiUrl()}/products/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       })

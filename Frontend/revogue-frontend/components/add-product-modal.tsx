@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
+import { getApiUrl } from "@/lib/api-url"
 
 const CATEGORIES = ["Tops", "Bottoms", "Outerwear", "Dresses", "Footwear", "Accessories"]
 
@@ -34,7 +35,7 @@ export function AddProductModal({ open, onClose }: { open: boolean; onClose: () 
     const token = localStorage.getItem("token")
 
     try {
-      const response = await fetch("http://localhost:3001/products", {
+      const response = await fetch(`${getApiUrl()}/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
