@@ -1,78 +1,36 @@
-import {
-  Injectable,
-  UnauthorizedException,
-  ConflictException,
-} from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
-import * as bcrypt from 'bcrypt';
-import { UsersService } from '../users/users.service';
-import { SignUpDto, LoginDto } from './dto/auth.dto';
-import { User } from '../users/entities/user.entity';
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User, UserRole } from '../users/entities/user.entity';
 
 @Injectable()
 export class AuthService {
   constructor(
-    private usersService: UsersService,
-    private jwtService: JwtService,
+    @InjectRepository(User)
+    private usersRepository: Repository<User>,
   ) {}
 
-  async signUp(signUpDto: SignUpDto) {
-    const existingUser = await this.usersService.findByEmail(signUpDto.email);
-    if (existingUser) {
-      throw new ConflictException('Email already registered');
-    }
-
-    const hashedPassword = await bcrypt.hash(signUpDto.password, 10);
-
-    const user = await this.usersService.create({
-      ...signUpDto,
-      password: hashedPassword,
+  async syncUserFromCognito(cognitoPayload: {
+    id: string;
+    email: string;
+    role: string;
+    full_name?: string;
+  }): Promise<User> {
+    let user = await this.usersRepository.findOne({
+      where: { id: cognitoPayload.id },
     });
 
-    const token = this.generateToken(user);
-
-    return {
-      access_token: token,
-      user: {
-        id: user.id,
-        email: user.email,
-        full_name: user.full_name,
-        role: user.role,
-      },
-    };
-  }
-
-  async login(loginDto: LoginDto) {
-    const user = await this.validateUser(loginDto.email, loginDto.password);
-    const token = this.generateToken(user);
-
-    return {
-      access_token: token,
-      user: {
-        id: user.id,
-        email: user.email,
-        full_name: user.full_name,
-        role: user.role,
-      },
-    };
-  }
-
-  async validateUser(email: string, password: string): Promise<User> {
-    const user = await this.usersService.findByEmail(email);
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials');
-    }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      throw new UnauthorizedException('Invalid credentials');
+      user = this.usersRepository.create({
+        id: cognitoPayload.id,
+        email: cognitoPayload.email,
+        role: cognitoPayload.role as UserRole,
+        full_name: cognitoPayload.full_name || '',
+        password: '',
+      });
+      await this.usersRepository.save(user);
     }
 
     return user;
-  }
-
-  private generateToken(user: User): string {
-    const payload = { sub: user.id, email: user.email, role: user.role };
-    return this.jwtService.sign(payload);
   }
 }

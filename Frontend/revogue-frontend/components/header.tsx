@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
+import { signOut } from "aws-amplify/auth"
 import { Sparkles, ShoppingCart, LogOut, Package, Search, User } from "lucide-react"
 
 interface UserInterface {
@@ -87,11 +88,16 @@ export function Header() {
     updateUserState()
   }, [pathname, updateUserState])
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await signOut()
+    } catch (error) {
+      console.error("Cognito sign out failed:", error)
+    }
     localStorage.removeItem("token")
     localStorage.removeItem("user")
     setUser(null)
-    router.push("/")
+    router.push("/login")
   }
 
   return (

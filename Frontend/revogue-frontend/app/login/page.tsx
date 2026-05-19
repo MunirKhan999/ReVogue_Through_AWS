@@ -5,63 +5,66 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { signIn, fetchAuthSession } from "aws-amplify/auth"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Sparkles, Eye, EyeOff } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { getRoleFromToken, syncUserWithBackend } from "@/lib/auth-sync"
 
 export default function LoginPage() {
   const router = useRouter()
   const { toast } = useToast()
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  })
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
 
+    const form = e.currentTarget
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value
+    const password = (form.elements.namedItem("password") as HTMLInputElement).value
+
     try {
-      const response = await fetch("http://localhost:3001/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      await signIn({ username: email, password })
+
+      const session = await fetchAuthSession()
+      const token = session.tokens?.accessToken?.toString()
+
+      if (!token) {
+        throw new Error("No access token received")
+      }
+
+      const user = await syncUserWithBackend(token)
+
+      localStorage.setItem("token", token)
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: user.id,
+          email: user.email,
+          full_name: user.full_name,
+          role: user.role,
+        }),
+      )
+
+      const role = getRoleFromToken(token) ?? user.role
+
+      toast({
+        title: "Welcome back!",
+        description: `Logged in as ${user.email}`,
       })
 
-      const data = await response.json()
-
-      if (response.ok) {
-        // Store token and user data
-        localStorage.setItem("token", data.access_token)
-        localStorage.setItem("user", JSON.stringify(data.user))
-
-        toast({
-          title: "Welcome back!",
-          description: `Logged in as ${data.user.email}`,
-        })
-
-        // Redirect based on role
-        if (data.user.role === "seller") {
-          router.push("/seller/dashboard")
-        } else {
-          router.push("/store")
-        }
-      } else {
-        toast({
-          title: "Login failed",
-          description: data.message || "Invalid credentials",
-          variant: "destructive",
-        })
-      }
-    } catch (error) {
+      router.push(role === "seller" ? "/seller/dashboard" : "/store")
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Invalid credentials"
+      console.error("Login failed:", message)
       toast({
-        title: "Error",
-        description: "Failed to connect to server",
+        title: "Login failed",
+        description: message,
         variant: "destructive",
       })
     } finally {
@@ -87,15 +90,14 @@ export default function LoginPage() {
             <CardDescription>Enter your credentials to access your account</CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="you@example.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                 />
               </div>
@@ -105,10 +107,9 @@ export default function LoginPage() {
                 <div className="relative">
                   <Input
                     id="password"
+                    name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="••••••••"
-                    value={formData.password}
-                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     required
                   />
                   <button
@@ -131,7 +132,7 @@ export default function LoginPage() {
             </form>
 
             <div className="mt-6 text-center text-sm">
-              <span className="text-muted-foreground">Don't have an account? </span>
+              <span className="text-muted-foreground">Don&apos;t have an account? </span>
               <Link href="/signup" className="text-brand hover:underline font-medium">
                 Sign up
               </Link>

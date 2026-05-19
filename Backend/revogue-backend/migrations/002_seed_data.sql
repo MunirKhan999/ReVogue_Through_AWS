@@ -1,3 +1,5 @@
+
+
 -- Insert demo users (passwords need to be hashed with bcrypt before inserting)
 -- Use: bcrypt.hash('demo123', 10) to generate hashed passwords
 
