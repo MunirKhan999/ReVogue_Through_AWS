@@ -1,0 +1,85 @@
+name: Deploy ECS
+
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: 'Service to deploy (all | frontend | gateway | catalog | cart | order | payment | notification)'
+        required: true
+        default: 'all'
+  push:
+    branches: [main]
+    paths:
+      - 'Backend/services/**'
+      - '.github/workflows/deploy-ecs.yml'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  ECS_CLUSTER: revogue-cluster
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: vars.ENABLE_ECS_DEPLOY == 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Resolve services matrix
+        id: matrix
+        run: |
+          ALL='["frontend","gateway","catalog","cart","order","payment","notification"]'
+          INPUT="${{ github.event.inputs.service || 'all' }}"
+          if [ "$INPUT" = "all" ]; then
+            echo "services=$ALL" >> "$GITHUB_OUTPUT"
+          else
+            echo "services=[\"$INPUT\"]" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and push images
+        env:
+          SERVICES: ${{ steps.matrix.outputs.services }}
+        run: |
+          ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+          TAG="${GITHUB_SHA::7}"
+          for svc in $(echo "$SERVICES" | jq -r '.[]'); do
+            REPO="revogue-${svc}"
+            IMAGE="${ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:${TAG}"
+            docker build -f "Backend/services/${svc}/Dockerfile" -t "$IMAGE" "Backend/services/${svc}"
+            docker tag "$IMAGE" "${ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:latest"
+            docker push "$IMAGE"
+            docker push "${ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:latest"
+            echo "${svc}_image=$IMAGE" >> "$GITHUB_ENV"
+          done
+
+      - name: Deploy to ECS
+        env:
+          SERVICES: ${{ steps.matrix.outputs.services }}
+        run: |
+          TAG="${GITHUB_SHA::7}"
+          ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
+          for svc in $(echo "$SERVICES" | jq -r '.[]'); do
+            REPO="revogue-${svc}"
+            IMAGE="${ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:${TAG}"
+            aws ecs update-service \
+              --cluster "${ECS_CLUSTER}" \
+              --service "revogue-${svc}" \
+              --force-new-deployment \
+              --region "${AWS_REGION}" || echo "Service revogue-${svc} not found (enable ECS in Terraform first)"
+          done
