@@ -1,0 +1,99 @@
+{
+    "tasks": [
+        {
+            "attachments": [
+                {
+                    "id": "189b288e-90d7-46e2-8793-faa52ab3eb11",
+                    "type": "ElasticNetworkInterface",
+                    "status": "ATTACHED",
+                    "details": [
+                        {
+                            "name": "subnetId",
+                            "value": "subnet-0561670e5ab8a6d73"
+                        },
+                        {
+                            "name": "networkInterfaceId",
+                            "value": "eni-0ded46530d0f4eb05"
+                        },
+                        {
+                            "name": "macAddress",
+                            "value": "02:c6:af:21:77:f3"
+                        },
+                        {
+                            "name": "privateDnsName",
+                            "value": "ip-10-40-3-63.ec2.internal"
+                        },
+                        {
+                            "name": "privateIPv4Address",
+                            "value": "10.40.3.63"
+                        }
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "ecs.cpu-architecture",
+                    "value": "x86_64"
+                }
+            ],
+            "availabilityZone": "us-east-1a",
+            "clusterArn": "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster",
+            "connectivity": "CONNECTED",
+            "connectivityAt": "2026-06-03T01:01:50.338000+05:00",
+            "containers": [
+                {
+                    "containerArn": "arn:aws:ecs:us-east-1:687098277128:container/revogue-cluster/d50662a2e1e548eda0d10b01d469d6fd/9017cb12-17c6-4b2b-acfc-990355d501a3",
+                    "taskArn": "arn:aws:ecs:us-east-1:687098277128:task/revogue-cluster/d50662a2e1e548eda0d10b01d469d6fd",
+                    "name": "gateway",
+                    "image": "687098277128.dkr.ecr.us-east-1.amazonaws.com/revogue-gateway:latest",
+                    "imageDigest": "sha256:2a6c8934515d4565d0195550fb4d068f199a52d5c5490a51aca74682d80e8bfd",
+                    "runtimeId": "d50662a2e1e548eda0d10b01d469d6fd-3888792057",
+                    "lastStatus": "RUNNING",
+                    "networkBindings": [],
+                    "networkInterfaces": [
+                        {
+                            "attachmentId": "189b288e-90d7-46e2-8793-faa52ab3eb11",
+                            "privateIpv4Address": "10.40.3.63"
+                        }
+                    ],
+                    "healthStatus": "HEALTHY",
+                    "cpu": "0"
+                }
+            ],
+            "cpu": "256",
+            "createdAt": "2026-06-03T01:01:46.461000+05:00",
+            "desiredStatus": "RUNNING",
+            "enableExecuteCommand": false,
+            "group": "service:revogue-gateway",
+            "healthStatus": "HEALTHY",
+            "lastStatus": "RUNNING",
+            "launchType": "FARGATE",
+            "memory": "512",
+            "overrides": {
+                "containerOverrides": [
+                    {
+                        "name": "gateway"
+                    }
+                ],
+                "inferenceAcceleratorOverrides": []
+            },
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "pullStartedAt": "2026-06-03T01:02:02.710000+05:00",
+            "pullStoppedAt": "2026-06-03T01:02:07.871000+05:00",
+            "startedAt": "2026-06-03T01:02:17.695000+05:00",
+            "startedBy": "ecs-svc/1262302569706181472",
+            "tags": [],
+            "taskArn": "arn:aws:ecs:us-east-1:687098277128:task/revogue-cluster/d50662a2e1e548eda0d10b01d469d6fd",
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:687098277128:task-definition/revogue-gateway:2",
+            "version": 5,
+            "ephemeralStorage": {
+                "sizeInGiB": 20
+            },
+            "fargateEphemeralStorage": {
+                "sizeInGiB": 20
+            }
+        }
+    ],
+    "failures": []
+}

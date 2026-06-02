@@ -1,0 +1,141 @@
+{
+    "imageDetails": [
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:3e657d3a3fc38d30f90c32bee4eaadaf1aa4232907967ad19bf16ef7b1a0d966",
+            "imageSizeInBytes": 1438,
+            "imagePushedAt": "2026-06-03T01:01:19.824000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:bd122cb48d83a33e26d80cb3d702b707faf1c0effdd01bca2619c2c7e8f5714d",
+            "imageSizeInBytes": 1438,
+            "imagePushedAt": "2026-06-03T00:48:38.590000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:d5413a27ebb11f8d80e9a9e700f9309f8b5088e47274e757ab39be6257830bfb",
+            "imageSizeInBytes": 64867204,
+            "imagePushedAt": "2026-06-03T00:48:38.506000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "lastRecordedPullTime": "2026-06-03T00:49:29.673000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:cb81df91c7558daf7e30e515f3b9b2eaeb893b447f0cfb2652e88fc16e0743db",
+            "imageSizeInBytes": 1438,
+            "imagePushedAt": "2026-05-31T22:00:57.099000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "lastRecordedPullTime": "2026-06-01T23:28:19.902000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:1f2ce38708411331c89ce9f28f5e1a4ad4a7ff16f57bc7c122b3d1c9aa1de350",
+            "imageSizeInBytes": 64867278,
+            "imagePushedAt": "2026-06-03T01:01:19.819000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "lastRecordedPullTime": "2026-06-03T01:02:03.272000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:05010e38a9ea1bb2c70cf74180dfa12389cc0e0a959fb49dd29ae2f8dd71986c",
+            "imageSizeInBytes": 64867246,
+            "imagePushedAt": "2026-05-31T22:00:57.009000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "lastRecordedPullTime": "2026-06-01T23:10:40.659000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:2207a47b46d59b59294e71c8c35f4e2ba0c861d42500aba5729892a23180d0b6",
+            "imageSizeInBytes": 64867204,
+            "imagePushedAt": "2026-06-03T00:48:39.377000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "lastRecordedPullTime": "2026-06-03T00:49:29.608000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:22e46741854545ba3c260d738447165750afb29d043849503a81ce849a276525",
+            "imageSizeInBytes": 64867246,
+            "imagePushedAt": "2026-06-01T23:59:49.422000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "lastRecordedPullTime": "2026-06-03T00:48:39.117000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:c86a4581d910515e8fe54432cc0f1be24e8c70c2e38c60d34548fe46be475e68",
+            "imageSizeInBytes": 1437,
+            "imagePushedAt": "2026-06-01T23:59:48.769000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:304f7577616f51f66559be98070b6b61362c60fde2deafefa1bb6395edd9b663",
+            "imageSizeInBytes": 64867246,
+            "imagePushedAt": "2026-06-01T23:31:13.056000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "lastRecordedPullTime": "2026-06-01T23:59:49.181000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:ea12668b6312035c4c35d3ce8f39c0daab1a58561df6683bcba7b4cc0b543625",
+            "imageSizeInBytes": 64867246,
+            "imagePushedAt": "2026-05-31T22:00:57.808000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "lastRecordedPullTime": "2026-06-01T23:10:40.281000+05:00",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:72fda9460287bc8d9984014bdfe73479f937198b957912707dfc898a55456071",
+            "imageSizeInBytes": 1438,
+            "imagePushedAt": "2026-06-01T23:31:12.359000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.manifest.v1+json",
+            "artifactMediaType": "application/vnd.oci.image.config.v1+json",
+            "imageStatus": "ACTIVE"
+        },
+        {
+            "registryId": "687098277128",
+            "repositoryName": "revogue-gateway",
+            "imageDigest": "sha256:2a6c8934515d4565d0195550fb4d068f199a52d5c5490a51aca74682d80e8bfd",
+            "imageTags": [
+                "latest"
+            ],
+            "imageSizeInBytes": 64867278,
+            "imagePushedAt": "2026-06-03T01:01:20.469000+05:00",
+            "imageManifestMediaType": "application/vnd.oci.image.index.v1+json",
+            "lastRecordedPullTime": "2026-06-03T01:02:02.900000+05:00",
+            "imageStatus": "ACTIVE"
+        }
+    ]
+}

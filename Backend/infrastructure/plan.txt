@@ -1,0 +1,211 @@
+aws_cloudfront_origin_access_control.frontend: Refreshing state... [id=E1LJZRYD7H0QRR]
+data.aws_availability_zones.available: Reading...
+data.aws_vpc.default[0]: Reading...
+data.aws_ami.amazon_linux_2023: Reading...
+aws_iam_role.ec2: Refreshing state... [id=revogue-ec2-role]
+aws_vpc.main[0]: Refreshing state... [id=vpc-0422c6713997b337b]
+data.aws_caller_identity.current: Reading...
+aws_cloudwatch_log_group.ecs_service["notification"]: Refreshing state... [id=/ecs/revogue/notification]
+aws_cloudwatch_log_group.ecs_service["cart"]: Refreshing state... [id=/ecs/revogue/cart]
+aws_cognito_user_pool.main: Refreshing state... [id=us-east-1_NogZEV71B]
+data.aws_caller_identity.current: Read complete after 0s [id=687098277128]
+aws_cloudwatch_log_group.ecs_service["payment"]: Refreshing state... [id=/ecs/revogue/payment]
+aws_iam_role.ecs_execution[0]: Refreshing state... [id=revogue-ecs-execution-role]
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+aws_cloudwatch_log_group.ecs_service["order"]: Refreshing state... [id=/ecs/revogue/order]
+aws_cloudwatch_log_group.ecs_service["gateway"]: Refreshing state... [id=/ecs/revogue/gateway]
+aws_cloudwatch_log_group.ecs_service["catalog"]: Refreshing state... [id=/ecs/revogue/catalog]
+aws_cloudwatch_log_group.ecs_service["frontend"]: Refreshing state... [id=/ecs/revogue/frontend]
+aws_cloudwatch_dashboard.ecs[0]: Refreshing state... [id=revogue-ecs]
+aws_ecs_cluster.main[0]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster]
+data.aws_iam_policy_document.ecs_task[0]: Reading...
+data.aws_iam_policy_document.ecs_task[0]: Read complete after 0s [id=226360268]
+aws_iam_role.ecs_task[0]: Refreshing state... [id=revogue-ecs-task-role]
+aws_iam_openid_connect_provider.github[0]: Refreshing state... [id=arn:aws:iam::687098277128:oidc-provider/token.actions.githubusercontent.com]
+aws_ecr_repository.service["order"]: Refreshing state... [id=revogue-order]
+aws_ecr_repository.service["payment"]: Refreshing state... [id=revogue-payment]
+aws_ecr_repository.service["cart"]: Refreshing state... [id=revogue-cart]
+aws_ecr_repository.service["catalog"]: Refreshing state... [id=revogue-catalog]
+data.aws_vpc.default[0]: Read complete after 2s [id=vpc-07eada29f65845ee1]
+aws_ecr_repository.service["frontend"]: Refreshing state... [id=revogue-frontend]
+data.aws_ami.amazon_linux_2023: Read complete after 2s [id=ami-074bb5e3c681b0735]
+aws_ecr_repository.service["gateway"]: Refreshing state... [id=revogue-gateway]
+aws_ecr_repository.service["notification"]: Refreshing state... [id=revogue-notification]
+aws_s3_bucket.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_iam_role_policy_attachment.ec2_ssm: Refreshing state... [id=revogue-ec2-role-20260601054859883200000001]
+aws_iam_instance_profile.ec2: Refreshing state... [id=revogue-ec2-profile]
+data.aws_iam_policy_document.github_oidc_assume[0]: Reading...
+data.aws_iam_policy_document.github_oidc_assume[0]: Read complete after 0s [id=1742502586]
+aws_iam_role_policy_attachment.ecs_execution[0]: Refreshing state... [id=revogue-ecs-execution-role-20260601055133001600000002]
+data.aws_iam_policy_document.github_ecs_deploy[0]: Reading...
+data.aws_iam_policy_document.github_ecs_deploy[0]: Read complete after 0s [id=886829693]
+aws_iam_role_policy.ecs_task[0]: Refreshing state... [id=revogue-ecs-task-role:revogue-ecs-task-policy]
+aws_security_group.ecs_tasks[0]: Refreshing state... [id=sg-0b746aec3e021b12f]
+aws_lb_target_group.internal["notification"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-notification/5e682c046bf2ad25]
+aws_lb_target_group.internal["order"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-order/48fc34fcb17d4e8e]
+aws_lb_target_group.internal["cart"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-cart/bc28a5a08dac1ee4]
+aws_lb_target_group.internal["catalog"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-catalog/b100e98302225495]
+aws_lb_target_group.internal["payment"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-payment/1afa9b248e61c8ff]
+aws_security_group.vpc_link[0]: Refreshing state... [id=sg-07beab3a54474e751]
+aws_lb_target_group.internal["frontend"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-frontend/21e10bd929afa709]
+aws_service_discovery_private_dns_namespace.commerce[0]: Refreshing state... [id=ns-g4fet5z7cw3rhd3a]
+aws_lb_target_group.gateway_public[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61]
+aws_security_group.alb_public[0]: Refreshing state... [id=sg-0fc2345fa4ad38414]
+aws_security_group.alb_internal[0]: Refreshing state... [id=sg-0df5341a378fe243a]
+aws_subnet.public[0]: Refreshing state... [id=subnet-089f9114aa113078f]
+aws_subnet.public[1]: Refreshing state... [id=subnet-09009945480ce0e9d]
+aws_internet_gateway.ecs[0]: Refreshing state... [id=igw-07b8295b803352e21]
+aws_subnet.private[0]: Refreshing state... [id=subnet-0561670e5ab8a6d73]
+aws_subnet.private[1]: Refreshing state... [id=subnet-0d37fd7e276962d18]
+aws_iam_role.github_actions[0]: Refreshing state... [id=revogue-github-actions]
+data.aws_vpc.active: Reading...
+data.aws_subnets.selected: Reading...
+aws_security_group.ec2: Refreshing state... [id=sg-0de855cc296503868]
+aws_iam_policy.github_ecs_deploy[0]: Refreshing state... [id=arn:aws:iam::687098277128:policy/revogue-github-ecs-deploy]
+aws_ecr_lifecycle_policy.service["cart"]: Refreshing state... [id=revogue-cart]
+aws_ecr_lifecycle_policy.service["gateway"]: Refreshing state... [id=revogue-gateway]
+aws_ecr_lifecycle_policy.service["catalog"]: Refreshing state... [id=revogue-catalog]
+aws_ecr_lifecycle_policy.service["payment"]: Refreshing state... [id=revogue-payment]
+aws_ecr_lifecycle_policy.service["frontend"]: Refreshing state... [id=revogue-frontend]
+aws_ecr_lifecycle_policy.service["notification"]: Refreshing state... [id=revogue-notification]
+aws_ecr_lifecycle_policy.service["order"]: Refreshing state... [id=revogue-order]
+data.aws_subnets.selected: Read complete after 0s [id=us-east-1]
+aws_security_group_rule.ecs_tasks_from_vpc[0]: Refreshing state... [id=sgrule-1465133539]
+aws_security_group.redis[0]: Refreshing state... [id=sg-087f4cb32238e77ec]
+aws_security_group_rule.alb_internal_from_public_alb[0]: Refreshing state... [id=sgrule-414258774]
+aws_security_group_rule.alb_internal_from_ecs[0]: Refreshing state... [id=sgrule-554681677]
+aws_security_group_rule.ecs_tasks_from_internal_alb[0]: Refreshing state... [id=sgrule-199125515]
+aws_service_discovery_service.microservice["frontend"]: Refreshing state... [id=srv-b5f5vopyf23omyhg]
+aws_service_discovery_service.microservice["gateway"]: Refreshing state... [id=srv-vmbpyw5h7khf67jy]
+aws_service_discovery_service.microservice["catalog"]: Refreshing state... [id=srv-wgcf25sylzqghp6q]
+aws_service_discovery_service.microservice["order"]: Refreshing state... [id=srv-xeyuwspzzxfgqoej]
+aws_service_discovery_service.microservice["notification"]: Refreshing state... [id=srv-2xpognbvtsosyxad]
+aws_service_discovery_service.microservice["cart"]: Refreshing state... [id=srv-q4ueauh5e6erikrf]
+aws_service_discovery_service.microservice["payment"]: Refreshing state... [id=srv-nfkxn7koi6oatdlc]
+aws_apigatewayv2_vpc_link.ecs[0]: Refreshing state... [id=79jffm]
+aws_lb.public[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:loadbalancer/app/revogue-alb-public/d85bed18e5d1b593]
+aws_route_table.public[0]: Refreshing state... [id=rtb-0296a32d30c7866c7]
+aws_eip.nat[0]: Refreshing state... [id=eipalloc-03bae704550dedcc8]
+data.aws_vpc.active: Read complete after 1s [id=vpc-07eada29f65845ee1]
+aws_elasticache_subnet_group.redis[0]: Refreshing state... [id=revogue-redis-subnet-group]
+aws_lb.internal[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:loadbalancer/app/revogue-alb-internal/189b281f50ce3199]
+aws_iam_role_policy_attachment.github_ecs_deploy[0]: Refreshing state... [id=revogue-github-actions-20260601154035472600000002]
+aws_db_subnet_group.main: Refreshing state... [id=revogue-db-subnet-group]
+aws_instance.backend: Refreshing state... [id=i-019879fdbf90b0f17]
+aws_security_group.rds: Refreshing state... [id=sg-0d1bb2f28e180989f]
+aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-06f2269b148bce6aa]
+aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-09ebbd1ceb94232f0]
+aws_iam_user_policy.devops_s3_read: Refreshing state... [id=DevOPs:revogue-devops-s3-read]
+aws_s3_bucket_public_access_block.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_s3_bucket_versioning.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_cloudfront_distribution.frontend: Refreshing state... [id=E26RRIVPQVNL7H]
+aws_s3_bucket_server_side_encryption_configuration.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_security_group_rule.rds_from_ec2: Refreshing state... [id=sgrule-1545517582]
+aws_security_group_rule.rds_from_ecs[0]: Refreshing state... [id=sgrule-2061019076]
+aws_nat_gateway.ecs[0]: Refreshing state... [id=nat-02bffbac03aa66369]
+aws_lb_listener.public_http[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-public/d85bed18e5d1b593/ed11fc69d9e81b67]
+aws_route_table.private[1]: Refreshing state... [id=rtb-0c458b665b1c590a1]
+aws_route_table.private[0]: Refreshing state... [id=rtb-0423000d8e0db6d46]
+aws_lb_listener.internal_http[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1]
+data.aws_iam_policy_document.frontend_s3_policy: Reading...
+data.aws_iam_policy_document.frontend_s3_policy: Read complete after 0s [id=1770579152]
+data.aws_iam_policy_document.github_deploy: Reading...
+data.aws_iam_policy_document.github_deploy: Read complete after 0s [id=1271851577]
+aws_apigatewayv2_api.main: Refreshing state... [id=e9fpi2tcsa]
+aws_s3_bucket_policy.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_iam_policy.github_deploy: Refreshing state... [id=arn:aws:iam::687098277128:policy/revogue-github-deploy]
+aws_cognito_user_pool_client.web: Refreshing state... [id=2jrsmqbd94m9l944qrij2084q9]
+aws_elasticache_replication_group.redis[0]: Refreshing state... [id=revogue-redis]
+aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0cafe5fe3062ccce7]
+aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-08025d69297cf7c1b]
+aws_db_instance.postgres: Refreshing state... [id=db-VDDT7CR5F3US4LTYRYDGHMDFTA]
+aws_apigatewayv2_stage.main: Refreshing state... [id=prod]
+aws_apigatewayv2_integration.alb[0]: Refreshing state... [id=lj5zbvj]
+aws_iam_role_policy_attachment.github_deploy[0]: Refreshing state... [id=revogue-github-actions-20260601154151684500000003]
+aws_lb_listener_rule.internal_services["cart"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/26706f1c64c25501]
+aws_lb_listener_rule.internal_services["notification"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/387354a9bd507f54]
+aws_lb_listener_rule.internal_services["catalog"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/8e6e567258b3aebf]
+aws_lb_listener_rule.internal_services["frontend"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/483be82f99cd432b]
+aws_lb_listener_rule.internal_services["order"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/6d00d2f578fb4d8e]
+aws_lb_listener_rule.internal_services["payment"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/c7186ac76be7cb44]
+aws_apigatewayv2_route.proxy_ecs[0]: Refreshing state... [id=uczaigg]
+aws_apigatewayv2_route.root_ecs[0]: Refreshing state... [id=plqatq0]
+aws_ecs_task_definition.service["payment"]: Refreshing state... [id=revogue-payment]
+aws_ecs_task_definition.service["frontend"]: Refreshing state... [id=revogue-frontend]
+aws_ecs_task_definition.service["gateway"]: Refreshing state... [id=revogue-gateway]
+aws_ecs_task_definition.service["cart"]: Refreshing state... [id=revogue-cart]
+aws_ecs_task_definition.service["catalog"]: Refreshing state... [id=revogue-catalog]
+aws_ecs_task_definition.service["notification"]: Refreshing state... [id=revogue-notification]
+aws_ecs_task_definition.service["order"]: Refreshing state... [id=revogue-order]
+aws_eip.backend: Refreshing state... [id=eipalloc-04db3baadd8c971b1]
+aws_ecs_service.microservice["catalog"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-catalog]
+aws_ecs_service.microservice["gateway"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-gateway]
+aws_ecs_service.microservice["payment"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-payment]
+aws_ecs_service.microservice["frontend"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-frontend]
+aws_ecs_service.microservice["notification"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-notification]
+aws_ecs_service.microservice["cart"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-cart]
+aws_ecs_service.microservice["order"]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-order]
+aws_eip_association.backend: Refreshing state... [id=eipassoc-0aa9b6239550c26cb]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_apigatewayv2_integration.alb[0] will be updated in-place
+  ~ resource "aws_apigatewayv2_integration" "alb" {
+        id                                        = "lj5zbvj"
+      ~ integration_uri                           = "arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-public/d85bed18e5d1b593/ed11fc69d9e81b67" -> "http://revogue-alb-public-1825562550.us-east-1.elb.amazonaws.com"
+      ~ request_parameters                        = {
+          ~ "overwrite:path" = "$request.path" -> "$request.path.proxy"
+        }
+        # (15 unchanged attributes hidden)
+    }
+
+  # aws_security_group.rds will be updated in-place
+  ~ resource "aws_security_group" "rds" {
+        id                     = "sg-0d1bb2f28e180989f"
+      ~ ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "PostgreSQL from EC2 backend"
+              - from_port        = 5432
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0de855cc296503868",
+                ]
+              - self             = false
+              - to_port          = 5432
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "PostgreSQL from ECS (cross-VPC if legacy RDS)"
+              - from_port        = 5432
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0b746aec3e021b12f",
+                ]
+              - self             = false
+              - to_port          = 5432
+            },
+            # (1 unchanged element hidden)
+        ]
+        name                   = "revogue-rds-sg"
+        tags                   = {
+            "Name"    = "revogue-rds-sg"
+            "Project" = "revogue"
+        }
+        # (8 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 2 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

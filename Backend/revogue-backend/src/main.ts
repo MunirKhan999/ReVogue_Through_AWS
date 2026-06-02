@@ -6,14 +6,16 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS for Next.js frontend
+  const corsOrigins = [
+    'http://localhost:3000',
+    'http://localhost:3002',
+    process.env.FRONTEND_URL,
+    process.env.API_GATEWAY_URL,
+    ...(process.env.CORS_ORIGINS?.split(',').map((o) => o.trim()) ?? []),
+  ].filter(Boolean);
+
   app.enableCors({
-    origin: [
-      'http://localhost:3000',
-      'http://localhost:3002',
-      process.env.FRONTEND_URL,
-      'https://your-frontend-domain.vercel.app',
-    ].filter(Boolean),
+    origin: corsOrigins,
     credentials: true,
   });
 
@@ -36,8 +38,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);
 
-  await app.listen(3001);
-  console.log(`🚀 ReVogue Backend running on: http://localhost:3001`);
-  console.log(`📚 API Documentation: http://localhost:3001/api/docs`);
+  const port = parseInt(process.env.PORT || '3001', 10);
+  await app.listen(port, '0.0.0.0');
+  console.log(`🚀 ReVogue Backend running on port ${port}`);
+  console.log(`📚 API Documentation: /api/docs`);
 }
 bootstrap();

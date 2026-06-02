@@ -1,0 +1,29 @@
+{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-public/d85bed18e5d1b593/ed11fc69d9e81b67/043334df03285df0",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": true,
+            "Transforms": []
+        }
+    ]
+}

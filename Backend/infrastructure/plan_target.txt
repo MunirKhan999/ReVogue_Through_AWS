@@ -1,0 +1,47 @@
+data.aws_availability_zones.available: Reading...
+data.aws_caller_identity.current: Reading...
+aws_cloudfront_origin_access_control.frontend: Refreshing state... [id=E1LJZRYD7H0QRR]
+aws_vpc.main[0]: Refreshing state... [id=vpc-0422c6713997b337b]
+data.aws_caller_identity.current: Read complete after 0s [id=687098277128]
+aws_s3_bucket.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+aws_internet_gateway.ecs[0]: Refreshing state... [id=igw-07b8295b803352e21]
+aws_subnet.public[1]: Refreshing state... [id=subnet-09009945480ce0e9d]
+aws_subnet.public[0]: Refreshing state... [id=subnet-089f9114aa113078f]
+aws_security_group.alb_public[0]: Refreshing state... [id=sg-0fc2345fa4ad38414]
+aws_security_group.vpc_link[0]: Refreshing state... [id=sg-07beab3a54474e751]
+aws_apigatewayv2_vpc_link.ecs[0]: Refreshing state... [id=79jffm]
+aws_lb.public[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:loadbalancer/app/revogue-alb-public/d85bed18e5d1b593]
+aws_cloudfront_distribution.frontend: Refreshing state... [id=E26RRIVPQVNL7H]
+aws_apigatewayv2_api.main: Refreshing state... [id=e9fpi2tcsa]
+aws_apigatewayv2_integration.alb[0]: Refreshing state... [id=lj5zbvj]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_apigatewayv2_integration.alb[0] will be updated in-place
+  ~ resource "aws_apigatewayv2_integration" "alb" {
+        id                                        = "lj5zbvj"
+      ~ integration_uri                           = "arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-public/d85bed18e5d1b593/ed11fc69d9e81b67" -> "http://revogue-alb-public-1825562550.us-east-1.elb.amazonaws.com"
+        # (16 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
+
+Warning: Resource targeting is in effect
+
+You are creating a plan with the -target option, which means that the result of
+this plan may not represent all of the changes requested by the current
+configuration.
+
+The -target option is not for routine use, and is provided only for exceptional
+situations such as recovering from errors or mistakes, or when Terraform
+specifically suggests to use it as part of an error message.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

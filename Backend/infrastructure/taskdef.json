@@ -1,0 +1,180 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:us-east-1:687098277128:task-definition/revogue-gateway:2",
+        "containerDefinitions": [
+            {
+                "name": "gateway",
+                "image": "687098277128.dkr.ecr.us-east-1.amazonaws.com/revogue-gateway:latest",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 8080,
+                        "hostPort": 8080,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "command": [
+                    "node",
+                    "dist/main.js"
+                ],
+                "environment": [
+                    {
+                        "name": "SERVICE_NAME",
+                        "value": "gateway"
+                    },
+                    {
+                        "name": "REDIS_HOST",
+                        "value": "revogue-redis.fjd0vi.ng.0001.use1.cache.amazonaws.com"
+                    },
+                    {
+                        "name": "AWS_REGION",
+                        "value": "us-east-1"
+                    },
+                    {
+                        "name": "PAYMENT_SERVICE_URL",
+                        "value": "http://payment.commerce.local:3004"
+                    },
+                    {
+                        "name": "PORT",
+                        "value": "8080"
+                    },
+                    {
+                        "name": "DB_PORT",
+                        "value": "5432"
+                    },
+                    {
+                        "name": "CART_SERVICE_URL",
+                        "value": "http://cart.commerce.local:3002"
+                    },
+                    {
+                        "name": "CATALOG_SERVICE_URL",
+                        "value": "http://catalog.commerce.local:3001"
+                    },
+                    {
+                        "name": "DB_NAME",
+                        "value": "revogue"
+                    },
+                    {
+                        "name": "NOTIFICATION_SERVICE_URL",
+                        "value": "http://notification.commerce.local:3005"
+                    },
+                    {
+                        "name": "DB_HOST",
+                        "value": "revogue-postgres.c07s4icweide.us-east-1.rds.amazonaws.com"
+                    },
+                    {
+                        "name": "COGNITO_USER_POOL_ID",
+                        "value": "us-east-1_NogZEV71B"
+                    },
+                    {
+                        "name": "DB_SSL",
+                        "value": "true"
+                    },
+                    {
+                        "name": "DB_USERNAME",
+                        "value": "revogue_admin"
+                    },
+                    {
+                        "name": "REDIS_PORT",
+                        "value": "6379"
+                    },
+                    {
+                        "name": "CLOUDMAP_NAMESPACE",
+                        "value": "commerce.local"
+                    },
+                    {
+                        "name": "NODE_ENV",
+                        "value": "production"
+                    },
+                    {
+                        "name": "ORDER_SERVICE_URL",
+                        "value": "http://order.commerce.local:3003"
+                    },
+                    {
+                        "name": "COGNITO_CLIENT_ID",
+                        "value": "2jrsmqbd94m9l944qrij2084q9"
+                    },
+                    {
+                        "name": "DB_PASSWORD",
+                        "value": "munir999"
+                    }
+                ],
+                "mountPoints": [],
+                "volumesFrom": [],
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "/ecs/revogue/gateway",
+                        "awslogs-region": "us-east-1",
+                        "awslogs-stream-prefix": "gateway"
+                    }
+                },
+                "healthCheck": {
+                    "command": [
+                        "CMD-SHELL",
+                        "curl -sf http://localhost:8080/health || exit 1"
+                    ],
+                    "interval": 30,
+                    "timeout": 5,
+                    "retries": 3,
+                    "startPeriod": 60
+                },
+                "systemControls": []
+            }
+        ],
+        "family": "revogue-gateway",
+        "taskRoleArn": "arn:aws:iam::687098277128:role/revogue-ecs-task-role",
+        "executionRoleArn": "arn:aws:iam::687098277128:role/revogue-ecs-execution-role",
+        "networkMode": "awsvpc",
+        "revision": 2,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+            },
+            {
+                "name": "ecs.capability.execution-role-awslogs"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.ecr-auth"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.task-iam-role"
+            },
+            {
+                "name": "ecs.capability.container-health-check"
+            },
+            {
+                "name": "ecs.capability.execution-role-ecr-pull"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2",
+            "FARGATE",
+            "MANAGED_INSTANCES"
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "256",
+        "memory": "512",
+        "registeredAt": "2026-06-01T23:10:14.010000+05:00",
+        "registeredBy": "arn:aws:iam::687098277128:user/DevOPs"
+    },
+    "tags": []
+}

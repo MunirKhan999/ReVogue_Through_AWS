@@ -24,8 +24,12 @@ export class JwtAuthGuard implements CanActivate {
       const payload = await verifier.verify(token);
       request.user = {
         id: payload.sub,
-        email: payload.email,
-        role: payload['custom:role'],
+        email:
+          (payload.email as string) ||
+          (payload.username as string) ||
+          '',
+        role: (payload['custom:role'] as string) || 'buyer',
+        full_name: (payload.name as string) || '',
       };
       return true;
     } catch {

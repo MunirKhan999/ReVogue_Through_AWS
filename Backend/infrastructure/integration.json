@@ -1,0 +1,13 @@
+{
+    "ConnectionId": "79jffm",
+    "ConnectionType": "VPC_LINK",
+    "IntegrationId": "lj5zbvj",
+    "IntegrationMethod": "ANY",
+    "IntegrationType": "HTTP_PROXY",
+    "IntegrationUri": "arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-public/d85bed18e5d1b593/ed11fc69d9e81b67",
+    "PayloadFormatVersion": "1.0",
+    "RequestParameters": {
+        "overwrite:path": "$request.path.proxy"
+    },
+    "TimeoutInMillis": 30000
+}

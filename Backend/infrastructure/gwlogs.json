@@ -1,0 +1,258 @@
+{
+    "events": [
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448341,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestFactory] \u001b[39m\u001b[32mStarting Nest application...\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851802854817068502681873249202895695895887594192896"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448353,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[InstanceLoader] \u001b[39m\u001b[32mAppModule dependencies initialized\u001b[39m\u001b[38;5;3m +13ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851803122426010885049350947631514967676225665957889"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448435,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RoutesResolver] \u001b[39m\u001b[32mGatewayController {/}:\u001b[39m\u001b[38;5;3m +81ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851804951087117164560448553560413324841869156352002"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448437,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/health, GET} route\u001b[39m\u001b[38;5;3m +3ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851804995688607561621694836631849870138592168312835"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448439,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/catalog/*, ALL} route\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851805040290097958682941119703286415435315180273668"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448440,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/cart/*, ALL} route\u001b[39m\u001b[38;5;3m +0ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851805062590843157213564261239004688083676686254085"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448440,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/order/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851805062590843157213564261239004688083676686254086"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448440,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/payment/*, ALL} route\u001b[39m\u001b[38;5;3m +0ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851805062590843157213564261239004688083676686254087"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448441,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/notification/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851805084891588355744187402774722960732038192234504"
+        },
+        {
+            "logStreamName": "gateway/gateway/1a73bf49ed774c5a8ee09d92d4cce4f7",
+            "timestamp": 1780337448443,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 6:10:48 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestApplication] \u001b[39m\u001b[32mNest application successfully started\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780337450562,
+            "eventId": "39702851805129493078752805433685846159506028761204195337"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632564,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestFactory] \u001b[39m\u001b[32mStarting Nest application...\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922813400595369279097333217420238506706913506492416"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632574,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[InstanceLoader] \u001b[39m\u001b[32mAppModule dependencies initialized\u001b[39m\u001b[38;5;3m +11ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922813623602821264403564632777421233190528566296577"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632653,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RoutesResolver] \u001b[39m\u001b[32mGatewayController {/}:\u001b[39m\u001b[38;5;3m +78ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815385361691948322792814099164772411087538749442"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632655,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/health, GET} route\u001b[39m\u001b[38;5;3m +3ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815429963182345384039097170601317707810550710275"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632657,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/catalog/*, ALL} route\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815474564672742445285380242037863004533562671108"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632657,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/cart/*, ALL} route\u001b[39m\u001b[38;5;3m +0ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815474564672742445285380242037863004533562671109"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632658,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/order/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815496865417940975908521777756135652895068651526"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632658,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/payment/*, ALL} route\u001b[39m\u001b[38;5;3m +0ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815496865417940975908521777756135652895068651527"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632659,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/notification/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815519166163139506531663313474408301256574631944"
+        },
+        {
+            "logStreamName": "gateway/gateway/1276eaf582624947adf0064452c5a58e",
+            "timestamp": 1780340632661,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:03:52 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestApplication] \u001b[39m\u001b[32mNest application successfully started\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780340634942,
+            "eventId": "39702922815563767653536567777946384910953597979586592777"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689567,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestFactory] \u001b[39m\u001b[32mStarting Nest application...\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968686100370982366493828281040500451143977147105280"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689578,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[InstanceLoader] \u001b[39m\u001b[32mAppModule dependencies initialized\u001b[39m\u001b[38;5;3m +12ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968686345679179550330682837933401450275953712889857"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689656,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RoutesResolver] \u001b[39m\u001b[32mGatewayController {/}:\u001b[39m\u001b[38;5;3m +78ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688085137305035719287877719426716848151179362306"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689660,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/health, GET} route\u001b[39m\u001b[38;5;3m +4ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688174340285829841780443862299807441597203283971"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689663,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/catalog/*, ALL} route\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688241242521425433649868469454625386681721225220"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689663,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/cart/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688241242521425433649868469454625386681721225221"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689664,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/order/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688263543266623964273010005172898035043227205638"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689665,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/payment/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688285844011822494896151540891170683404733186055"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689666,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/notification/*, ALL} route\u001b[39m\u001b[38;5;3m +1ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688308144757021025519293076609443331766239166472"
+        },
+        {
+            "logStreamName": "gateway/gateway/c8730b9fd9594989b2d572d9c00b412f",
+            "timestamp": 1780342689668,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/01/2026, 7:38:09 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestApplication] \u001b[39m\u001b[32mNest application successfully started\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780342691864,
+            "eventId": "39702968688352746247418086765576148045988628489251127305"
+        },
+        {
+            "logStreamName": "gateway/gateway/cdf37647f2434f6eb01ddf6760ff1d61",
+            "timestamp": 1780429777493,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/02/2026, 7:49:37 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestFactory] \u001b[39m\u001b[32mStarting Nest application...\u001b[39m",
+            "ingestionTime": 1780429779817,
+            "eventId": "39704910811747965472583483061315089958722384164759535616"
+        },
+        {
+            "logStreamName": "gateway/gateway/cdf37647f2434f6eb01ddf6760ff1d61",
+            "timestamp": 1780429777575,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/02/2026, 7:49:37 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[InstanceLoader] \u001b[39m\u001b[32mAppModule dependencies initialized\u001b[39m\u001b[38;5;3m +82ms\u001b[39m",
+            "ingestionTime": 1780429779817,
+            "eventId": "39704910813576626578862994158921018857079549808249929729"
+        },
+        {
+            "logStreamName": "gateway/gateway/cdf37647f2434f6eb01ddf6760ff1d61",
+            "timestamp": 1780429777580,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/02/2026, 7:49:37 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RoutesResolver] \u001b[39m\u001b[32mGatewayController {/}:\u001b[39m\u001b[38;5;3m +6ms\u001b[39m",
+            "ingestionTime": 1780429779817,
+            "eventId": "39704910813688130304855647274628697448442791615779831810"
+        },
+        {
+            "logStreamName": "gateway/gateway/cdf37647f2434f6eb01ddf6760ff1d61",
+            "timestamp": 1780429777583,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/02/2026, 7:49:37 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/health, GET} route\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780429779817,
+            "eventId": "39704910813755032540451239144053304603260736700297773059"
+        },
+        {
+            "logStreamName": "gateway/gateway/cdf37647f2434f6eb01ddf6760ff1d61",
+            "timestamp": 1780429777584,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/02/2026, 7:49:37 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[RouterExplorer] \u001b[39m\u001b[32mMapped {/api/:service/*, ALL} route\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780429779817,
+            "eventId": "39704910813777333285649769767194840321533385061803753476"
+        },
+        {
+            "logStreamName": "gateway/gateway/cdf37647f2434f6eb01ddf6760ff1d61",
+            "timestamp": 1780429777586,
+            "message": "\u001b[32m[Nest] 1  - \u001b[39m06/02/2026, 7:49:37 PM \u001b[32m    LOG\u001b[39m \u001b[38;5;3m[NestApplication] \u001b[39m\u001b[32mNest application successfully started\u001b[39m\u001b[38;5;3m +2ms\u001b[39m",
+            "ingestionTime": 1780429779817,
+            "eventId": "39704910813821934776046831013477911758078681784815714309"
+        }
+    ],
+    "searchedLogStreams": [],
+    "nextToken": "Bxkq6kVGFtq2y_MoigeqscPOdhXVbhiVtLoAmXb5jCqGxRCMEjo0OCrINTpqSzwOFAH_nY7hItd4LXMFLUyja3LMZfBRFcpACKJYUDon4Q7fvtGSW54elNfoYmWosNGkoNtBklXVkr2HfG8UKCitFRN72yG4KMirTFMyczAjrqeqzLlpOP9P5wEmTRJj3Ioswx85TMXvM5CqLJ3EF1vIMb4HGvBPW7Oklkhjhu6iGBrCa0Z8bem8NkDJYqD1TIHyDQmjAroHrCwULh23csnkcQrPhYrrdIqFxeA8uxnjEVChE8GR_lPhz3r56TAKC_yIrcO3VgT-z4lMWGIqSdOqYA"
+}

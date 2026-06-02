@@ -38,9 +38,14 @@ jobs:
           aws ecr get-login-password --region ${{ env.AWS_REGION }} | \
             docker login --username AWS --password-stdin ${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com
       
-      - name: Build Docker image
+      - name: Debug - List files
         run: |
-          cd Backend/services/gateway
+          echo "Current working directory: $(pwd)"
+          ls -R Backend/services || echo "Directory Backend/services not found"
+
+      - name: Build Docker image
+        working-directory: E:\Coding\revogue\Backend\services\gateway
+        run: |
           docker build -t ${{ env.ECR_REPOSITORY }}:latest .
       
       - name: Tag image for ECR

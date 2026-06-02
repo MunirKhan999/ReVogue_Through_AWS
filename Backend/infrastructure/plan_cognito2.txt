@@ -1,0 +1,781 @@
+data.aws_availability_zones.available: Reading...
+data.aws_ami.amazon_linux_2023: Reading...
+aws_cloudwatch_dashboard.ecs[0]: Refreshing state... [id=revogue-ecs]
+aws_cloudfront_origin_access_control.frontend: Refreshing state... [id=E1LJZRYD7H0QRR]
+aws_iam_openid_connect_provider.github[0]: Refreshing state... [id=arn:aws:iam::687098277128:oidc-provider/token.actions.githubusercontent.com]
+data.aws_caller_identity.current: Reading...
+aws_ecs_cluster.main[0]: Refreshing state... [id=arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster]
+aws_vpc.main[0]: Refreshing state... [id=vpc-0422c6713997b337b]
+aws_iam_role.ecs_execution[0]: Refreshing state... [id=revogue-ecs-execution-role]
+aws_iam_role.ecs_task[0]: Refreshing state... [id=revogue-ecs-task-role]
+data.aws_caller_identity.current: Read complete after 0s [id=687098277128]
+aws_iam_role.ec2: Refreshing state... [id=revogue-ec2-role]
+aws_cognito_user_pool.main: Refreshing state... [id=us-east-1_NogZEV71B]
+data.aws_iam_policy_document.ecs_task[0]: Reading...
+data.aws_iam_policy_document.ecs_task[0]: Read complete after 0s [id=226360268]
+data.aws_vpc.default[0]: Reading...
+aws_ecr_repository.service["gateway"]: Refreshing state... [id=revogue-gateway]
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+aws_ecr_repository.service["notification"]: Refreshing state... [id=revogue-notification]
+aws_ecr_repository.service["payment"]: Refreshing state... [id=revogue-payment]
+aws_ecr_repository.service["order"]: Refreshing state... [id=revogue-order]
+aws_ecr_repository.service["cart"]: Refreshing state... [id=revogue-cart]
+aws_ecr_repository.service["catalog"]: Refreshing state... [id=revogue-catalog]
+data.aws_ami.amazon_linux_2023: Read complete after 2s [id=ami-074bb5e3c681b0735]
+aws_ecr_repository.service["frontend"]: Refreshing state... [id=revogue-frontend]
+aws_cloudwatch_log_group.ecs_service["cart"]: Refreshing state... [id=/ecs/revogue/cart]
+aws_cloudwatch_log_group.ecs_service["catalog"]: Refreshing state... [id=/ecs/revogue/catalog]
+aws_cloudwatch_log_group.ecs_service["payment"]: Refreshing state... [id=/ecs/revogue/payment]
+data.aws_vpc.default[0]: Read complete after 1s [id=vpc-07eada29f65845ee1]
+aws_cloudwatch_log_group.ecs_service["frontend"]: Refreshing state... [id=/ecs/revogue/frontend]
+aws_cloudwatch_log_group.ecs_service["gateway"]: Refreshing state... [id=/ecs/revogue/gateway]
+aws_cloudwatch_log_group.ecs_service["notification"]: Refreshing state... [id=/ecs/revogue/notification]
+aws_cloudwatch_log_group.ecs_service["order"]: Refreshing state... [id=/ecs/revogue/order]
+aws_s3_bucket.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+data.aws_iam_policy_document.github_oidc_assume[0]: Reading...
+data.aws_iam_policy_document.github_oidc_assume[0]: Read complete after 0s [id=1742502586]
+aws_iam_role_policy_attachment.ecs_execution[0]: Refreshing state... [id=revogue-ecs-execution-role-20260601055133001600000002]
+aws_iam_role_policy_attachment.ec2_ssm: Refreshing state... [id=revogue-ec2-role-20260601054859883200000001]
+aws_iam_instance_profile.ec2: Refreshing state... [id=revogue-ec2-profile]
+aws_iam_role_policy.ecs_task[0]: Refreshing state... [id=revogue-ecs-task-role:revogue-ecs-task-policy]
+data.aws_iam_policy_document.github_ecs_deploy[0]: Reading...
+data.aws_iam_policy_document.github_ecs_deploy[0]: Read complete after 0s [id=886829693]
+aws_ecr_lifecycle_policy.service["cart"]: Refreshing state... [id=revogue-cart]
+aws_ecr_lifecycle_policy.service["catalog"]: Refreshing state... [id=revogue-catalog]
+aws_ecr_lifecycle_policy.service["order"]: Refreshing state... [id=revogue-order]
+aws_ecr_lifecycle_policy.service["frontend"]: Refreshing state... [id=revogue-frontend]
+aws_ecr_lifecycle_policy.service["payment"]: Refreshing state... [id=revogue-payment]
+aws_ecr_lifecycle_policy.service["gateway"]: Refreshing state... [id=revogue-gateway]
+aws_ecr_lifecycle_policy.service["notification"]: Refreshing state... [id=revogue-notification]
+aws_iam_role.github_actions[0]: Refreshing state... [id=revogue-github-actions]
+aws_security_group.ecs_tasks[0]: Refreshing state... [id=sg-0b746aec3e021b12f]
+aws_security_group.vpc_link[0]: Refreshing state... [id=sg-07beab3a54474e751]
+aws_subnet.public[0]: Refreshing state... [id=subnet-089f9114aa113078f]
+aws_subnet.public[1]: Refreshing state... [id=subnet-09009945480ce0e9d]
+aws_subnet.private[0]: Refreshing state... [id=subnet-0561670e5ab8a6d73]
+aws_subnet.private[1]: Refreshing state... [id=subnet-0d37fd7e276962d18]
+aws_internet_gateway.ecs[0]: Refreshing state... [id=igw-07b8295b803352e21]
+aws_security_group.alb_internal[0]: Refreshing state... [id=sg-0df5341a378fe243a]
+aws_lb_target_group.gateway_public[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61]
+aws_lb_target_group.internal["cart"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-cart/bc28a5a08dac1ee4]
+aws_lb_target_group.internal["catalog"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-catalog/b100e98302225495]
+aws_lb_target_group.internal["order"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-order/48fc34fcb17d4e8e]
+aws_lb_target_group.internal["payment"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-payment/1afa9b248e61c8ff]
+aws_lb_target_group.internal["notification"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-notification/5e682c046bf2ad25]
+aws_lb_target_group.internal["frontend"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-frontend/21e10bd929afa709]
+aws_security_group.alb_public[0]: Refreshing state... [id=sg-0fc2345fa4ad38414]
+aws_service_discovery_private_dns_namespace.commerce[0]: Refreshing state... [id=ns-g4fet5z7cw3rhd3a]
+aws_iam_policy.github_ecs_deploy[0]: Refreshing state... [id=arn:aws:iam::687098277128:policy/revogue-github-ecs-deploy]
+data.aws_subnets.selected: Reading...
+data.aws_vpc.active: Reading...
+aws_security_group.ec2: Refreshing state... [id=sg-0de855cc296503868]
+aws_security_group_rule.ecs_tasks_from_vpc[0]: Refreshing state... [id=sgrule-1465133539]
+aws_security_group.redis[0]: Refreshing state... [id=sg-087f4cb32238e77ec]
+aws_apigatewayv2_vpc_link.ecs[0]: Refreshing state... [id=79jffm]
+aws_route_table.public[0]: Refreshing state... [id=rtb-0296a32d30c7866c7]
+aws_eip.nat[0]: Refreshing state... [id=eipalloc-03bae704550dedcc8]
+aws_elasticache_subnet_group.redis[0]: Refreshing state... [id=revogue-redis-subnet-group]
+data.aws_subnets.selected: Read complete after 0s [id=us-east-1]
+aws_security_group_rule.ecs_tasks_from_internal_alb[0]: Refreshing state... [id=sgrule-199125515]
+aws_lb.internal[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:loadbalancer/app/revogue-alb-internal/189b281f50ce3199]
+aws_security_group_rule.alb_internal_from_ecs[0]: Refreshing state... [id=sgrule-554681677]
+aws_lb.public[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:loadbalancer/app/revogue-alb-public/d85bed18e5d1b593]
+aws_security_group_rule.alb_internal_from_public_alb[0]: Refreshing state... [id=sgrule-414258774]
+aws_iam_role_policy_attachment.github_ecs_deploy[0]: Refreshing state... [id=revogue-github-actions-20260601154035472600000002]
+aws_service_discovery_service.microservice["cart"]: Refreshing state... [id=srv-q4ueauh5e6erikrf]
+aws_service_discovery_service.microservice["catalog"]: Refreshing state... [id=srv-wgcf25sylzqghp6q]
+aws_service_discovery_service.microservice["notification"]: Refreshing state... [id=srv-2xpognbvtsosyxad]
+aws_service_discovery_service.microservice["order"]: Refreshing state... [id=srv-xeyuwspzzxfgqoej]
+aws_service_discovery_service.microservice["payment"]: Refreshing state... [id=srv-nfkxn7koi6oatdlc]
+aws_service_discovery_service.microservice["frontend"]: Refreshing state... [id=srv-b5f5vopyf23omyhg]
+aws_service_discovery_service.microservice["gateway"]: Refreshing state... [id=srv-vmbpyw5h7khf67jy]
+aws_db_subnet_group.main: Refreshing state... [id=revogue-db-subnet-group]
+data.aws_vpc.active: Read complete after 2s [id=vpc-07eada29f65845ee1]
+aws_instance.backend: Refreshing state... [id=i-019879fdbf90b0f17]
+aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-06f2269b148bce6aa]
+aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-09ebbd1ceb94232f0]
+aws_s3_bucket_public_access_block.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_nat_gateway.ecs[0]: Refreshing state... [id=nat-02bffbac03aa66369]
+aws_cloudfront_distribution.frontend: Refreshing state... [id=E26RRIVPQVNL7H]
+aws_s3_bucket_versioning.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_s3_bucket_server_side_encryption_configuration.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_iam_user_policy.devops_s3_read: Refreshing state... [id=DevOPs:revogue-devops-s3-read]
+aws_lb_listener.internal_http[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1]
+aws_security_group.rds: Refreshing state... [id=sg-0d1bb2f28e180989f]
+aws_elasticache_replication_group.redis[0]: Refreshing state... [id=revogue-redis]
+aws_lb_listener.public_http[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener/app/revogue-alb-public/d85bed18e5d1b593/ed11fc69d9e81b67]
+aws_route_table.private[0]: Refreshing state... [id=rtb-0423000d8e0db6d46]
+aws_route_table.private[1]: Refreshing state... [id=rtb-0c458b665b1c590a1]
+aws_security_group_rule.rds_from_ec2: Refreshing state... [id=sgrule-1545517582]
+aws_security_group_rule.rds_from_ecs[0]: Refreshing state... [id=sgrule-2061019076]
+aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0cafe5fe3062ccce7]
+aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-08025d69297cf7c1b]
+aws_lb_listener_rule.internal_services["frontend"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/483be82f99cd432b]
+aws_lb_listener_rule.internal_services["payment"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/c7186ac76be7cb44]
+aws_lb_listener_rule.internal_services["notification"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/387354a9bd507f54]
+aws_lb_listener_rule.internal_services["order"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/6d00d2f578fb4d8e]
+aws_lb_listener_rule.internal_services["cart"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/26706f1c64c25501]
+aws_lb_listener_rule.internal_services["catalog"]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:687098277128:listener-rule/app/revogue-alb-internal/189b281f50ce3199/255c04e4bdb587f1/8e6e567258b3aebf]
+aws_db_instance.postgres: Refreshing state... [id=db-VDDT7CR5F3US4LTYRYDGHMDFTA]
+data.aws_iam_policy_document.frontend_s3_policy: Reading...
+data.aws_iam_policy_document.frontend_s3_policy: Read complete after 0s [id=1770579152]
+data.aws_iam_policy_document.github_deploy: Reading...
+data.aws_iam_policy_document.github_deploy: Read complete after 0s [id=1271851577]
+aws_apigatewayv2_api.main: Refreshing state... [id=e9fpi2tcsa]
+aws_s3_bucket_policy.frontend: Refreshing state... [id=revogue-frontend-687098277128]
+aws_iam_policy.github_deploy: Refreshing state... [id=arn:aws:iam::687098277128:policy/revogue-github-deploy]
+aws_cognito_user_pool_client.web: Refreshing state... [id=2jrsmqbd94m9l944qrij2084q9]
+aws_apigatewayv2_stage.main: Refreshing state... [id=prod]
+aws_apigatewayv2_integration.alb[0]: Refreshing state... [id=lj5zbvj]
+aws_apigatewayv2_route.proxy_ecs[0]: Refreshing state... [id=uczaigg]
+aws_apigatewayv2_route.root_ecs[0]: Refreshing state... [id=plqatq0]
+aws_iam_role_policy_attachment.github_deploy[0]: Refreshing state... [id=revogue-github-actions-20260601154151684500000003]
+aws_eip.backend: Refreshing state... [id=eipalloc-04db3baadd8c971b1]
+aws_eip_association.backend: Refreshing state... [id=eipassoc-0aa9b6239550c26cb]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # aws_ecs_service.microservice["cart"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-cart"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-cart"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-cart"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "cart"
+          + container_port   = 3002
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-cart/bc28a5a08dac1ee4"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-q4ueauh5e6erikrf"
+        }
+    }
+
+  # aws_ecs_service.microservice["catalog"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-catalog"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-catalog"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-catalog"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "catalog"
+          + container_port   = 3001
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-catalog/b100e98302225495"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-wgcf25sylzqghp6q"
+        }
+    }
+
+  # aws_ecs_service.microservice["frontend"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-frontend"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-frontend"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-frontend"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "frontend"
+          + container_port   = 3000
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-frontend/21e10bd929afa709"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-b5f5vopyf23omyhg"
+        }
+    }
+
+  # aws_ecs_service.microservice["gateway"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-gateway"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-gateway"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-gateway"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "gateway"
+          + container_port   = 8080
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-vmbpyw5h7khf67jy"
+        }
+    }
+
+  # aws_ecs_service.microservice["notification"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-notification"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-notification"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-notification"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "notification"
+          + container_port   = 3005
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-notification/5e682c046bf2ad25"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-2xpognbvtsosyxad"
+        }
+    }
+
+  # aws_ecs_service.microservice["order"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-order"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-order"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-order"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "order"
+          + container_port   = 3003
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-order/48fc34fcb17d4e8e"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-xeyuwspzzxfgqoej"
+        }
+    }
+
+  # aws_ecs_service.microservice["payment"] will be created
+  + resource "aws_ecs_service" "microservice" {
+      + availability_zone_rebalancing      = "DISABLED"
+      + cluster                            = "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster"
+      + deployment_maximum_percent         = 200
+      + deployment_minimum_healthy_percent = 100
+      + desired_count                      = 1
+      + enable_ecs_managed_tags            = false
+      + enable_execute_command             = false
+      + iam_role                           = (known after apply)
+      + id                                 = (known after apply)
+      + launch_type                        = "FARGATE"
+      + name                               = "revogue-payment"
+      + platform_version                   = (known after apply)
+      + scheduling_strategy                = "REPLICA"
+      + tags                               = {
+          + "Name"    = "revogue-svc-payment"
+          + "Project" = "revogue"
+        }
+      + tags_all                           = {
+          + "Name"    = "revogue-svc-payment"
+          + "Project" = "revogue"
+        }
+      + task_definition                    = (known after apply)
+      + triggers                           = (known after apply)
+      + wait_for_steady_state              = false
+
+      + load_balancer {
+          + container_name   = "payment"
+          + container_port   = 3004
+          + target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-payment/1afa9b248e61c8ff"
+            # (1 unchanged attribute hidden)
+        }
+
+      + network_configuration {
+          + assign_public_ip = false
+          + security_groups  = [
+              + "sg-0b746aec3e021b12f",
+            ]
+          + subnets          = [
+              + "subnet-0561670e5ab8a6d73",
+              + "subnet-0d37fd7e276962d18",
+            ]
+        }
+
+      + service_registries {
+          + registry_arn = "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-nfkxn7koi6oatdlc"
+        }
+    }
+
+  # aws_ecs_task_definition.service["cart"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-cart"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-cart"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-cart"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_ecs_task_definition.service["catalog"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-catalog"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-catalog"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-catalog"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_ecs_task_definition.service["frontend"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-frontend"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-frontend"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-frontend"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_ecs_task_definition.service["gateway"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-gateway"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-gateway"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-gateway"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_ecs_task_definition.service["notification"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-notification"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-notification"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-notification"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_ecs_task_definition.service["order"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-order"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-order"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-order"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_ecs_task_definition.service["payment"] will be created
+  + resource "aws_ecs_task_definition" "service" {
+      + arn                      = (known after apply)
+      + arn_without_revision     = (known after apply)
+      + container_definitions    = (sensitive value)
+      + cpu                      = "256"
+      + enable_fault_injection   = (known after apply)
+      + execution_role_arn       = "arn:aws:iam::687098277128:role/revogue-ecs-execution-role"
+      + family                   = "revogue-payment"
+      + id                       = (known after apply)
+      + memory                   = "512"
+      + network_mode             = "awsvpc"
+      + requires_compatibilities = [
+          + "FARGATE",
+        ]
+      + revision                 = (known after apply)
+      + skip_destroy             = false
+      + tags                     = {
+          + "Name"    = "revogue-task-payment"
+          + "Project" = "revogue"
+        }
+      + tags_all                 = {
+          + "Name"    = "revogue-task-payment"
+          + "Project" = "revogue"
+        }
+      + task_role_arn            = "arn:aws:iam::687098277128:role/revogue-ecs-task-role"
+      + track_latest             = false
+    }
+
+  # aws_security_group.rds will be updated in-place
+  ~ resource "aws_security_group" "rds" {
+        id                     = "sg-0d1bb2f28e180989f"
+      ~ ingress                = [
+          - {
+              - cidr_blocks      = []
+              - description      = "PostgreSQL from EC2 backend"
+              - from_port        = 5432
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0de855cc296503868",
+                ]
+              - self             = false
+              - to_port          = 5432
+            },
+          - {
+              - cidr_blocks      = []
+              - description      = "PostgreSQL from ECS (cross-VPC if legacy RDS)"
+              - from_port        = 5432
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = [
+                  - "sg-0b746aec3e021b12f",
+                ]
+              - self             = false
+              - to_port          = 5432
+            },
+            # (1 unchanged element hidden)
+        ]
+        name                   = "revogue-rds-sg"
+        tags                   = {
+            "Name"    = "revogue-rds-sg"
+            "Project" = "revogue"
+        }
+        # (8 unchanged attributes hidden)
+    }
+
+Plan: 14 to add, 1 to change, 0 to destroy.
+
+Changes to Outputs:
+  + backend_env_snippet                 = <<-EOT
+        NODE_ENV=production
+        PORT=3001
+        DB_HOST=revogue-postgres.c07s4icweide.us-east-1.rds.amazonaws.com
+        DB_PORT=5432
+        DB_USERNAME=revogue_admin
+        DB_PASSWORD=<from-terraform.tfvars>
+        DB_NAME=revogue
+        DB_SSL=true
+        DB_SYNCHRONIZE=false
+        COGNITO_USER_POOL_ID=us-east-1_NogZEV71B
+        COGNITO_CLIENT_ID=2jrsmqbd94m9l944qrij2084q9
+        FRONTEND_URL=https://d2piuiryjaendq.cloudfront.net
+    EOT
+  ~ deployment_summary                  = {
+      ~ api_url             = null -> "https://e9fpi2tcsa.execute-api.us-east-1.amazonaws.com/prod"
+      ~ cloudfront_id       = null -> "E26RRIVPQVNL7H"
+      ~ cognito_client_id   = null -> "2jrsmqbd94m9l944qrij2084q9"
+      ~ cognito_user_pool   = null -> "us-east-1_NogZEV71B"
+      ~ ec2_public_ip       = null -> "72.44.44.239"
+      ~ frontend_url        = null -> "https://d2piuiryjaendq.cloudfront.net"
+      ~ github_actions_role = null -> "arn:aws:iam::687098277128:role/revogue-github-actions"
+      ~ rds_endpoint        = null -> "revogue-postgres.c07s4icweide.us-east-1.rds.amazonaws.com"
+        # (1 unchanged attribute hidden)
+    }
+  ~ github_secrets_checklist            = {
+      ~ AWS_DEPLOY_ROLE_ARN                 = null -> "arn:aws:iam::687098277128:role/revogue-github-actions"
+      ~ COGNITO_CLIENT_ID                   = null -> "2jrsmqbd94m9l944qrij2084q9"
+      ~ COGNITO_USER_POOL_ID                = null -> "us-east-1_NogZEV71B"
+      ~ DB_HOST                             = null -> "revogue-postgres.c07s4icweide.us-east-1.rds.amazonaws.com"
+      ~ EC2_HOST                            = null -> "72.44.44.239"
+      ~ FRONTEND_CLOUDFRONT_DISTRIBUTION_ID = null -> "E26RRIVPQVNL7H"
+      ~ FRONTEND_URL                        = null -> "https://d2piuiryjaendq.cloudfront.net"
+      ~ NEXT_PUBLIC_API_URL                 = null -> "https://e9fpi2tcsa.execute-api.us-east-1.amazonaws.com/prod"
+      ~ NEXT_PUBLIC_COGNITO_CLIENT_ID       = null -> "2jrsmqbd94m9l944qrij2084q9"
+      ~ NEXT_PUBLIC_COGNITO_USER_POOL_ID    = null -> "us-east-1_NogZEV71B"
+        # (4 unchanged attributes hidden)
+    }
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

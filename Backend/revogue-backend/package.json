@@ -19,7 +19,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "update-images": "node scripts/update-product-images.js",
-    "db:migrate": "node scripts/run-migrations.js"
+    "db:migrate": "node scripts/run-migrations.js",
+    "deploy:ec2": "node scripts/deploy-ec2.js"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

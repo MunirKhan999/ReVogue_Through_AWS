@@ -24,8 +24,8 @@ export class AuthService {
       user = this.usersRepository.create({
         id: cognitoPayload.id,
         email: cognitoPayload.email,
-        role: cognitoPayload.role as UserRole,
-        full_name: cognitoPayload.full_name || '',
+        role: (cognitoPayload.role as UserRole) || UserRole.BUYER,
+        full_name: cognitoPayload.full_name || cognitoPayload.email,
         password: '',
       });
       await this.usersRepository.save(user);

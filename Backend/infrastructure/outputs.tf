@@ -17,16 +17,3 @@ output "rds_username" {
   description = "Master username"
   value       = aws_db_instance.postgres.username
 }
-
-output "backend_env_snippet" {
-  description = "Copy these into Backend/.env"
-  value       = <<-EOT
-    DB_HOST=${aws_db_instance.postgres.address}
-    DB_PORT=${aws_db_instance.postgres.port}
-    DB_USERNAME=${aws_db_instance.postgres.username}
-    DB_PASSWORD=<your-terraform-db_password>
-    DB_NAME=${aws_db_instance.postgres.db_name}
-    DB_SSL=true
-    DB_SYNCHRONIZE=false
-  EOT
-}

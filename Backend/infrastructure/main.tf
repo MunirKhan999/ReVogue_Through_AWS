@@ -23,10 +23,6 @@ data "aws_vpc" "custom" {
   id    = var.vpc_id
 }
 
-locals {
-  vpc_id = var.vpc_id != "" ? data.aws_vpc.custom[0].id : data.aws_vpc.default[0].id
-}
-
 data "aws_vpc" "active" {
   id = local.vpc_id
 }
@@ -41,7 +37,7 @@ data "aws_subnets" "selected" {
 resource "aws_security_group" "rds" {
   name        = "${var.project_name}-rds-sg"
   description = "Allow PostgreSQL access to ${var.project_name} RDS"
-  vpc_id      = local.vpc_id
+  vpc_id      = local.ecs_enabled ? aws_vpc.main[0].id : local.vpc_id
 
   ingress {
     description = "PostgreSQL"
@@ -66,7 +62,7 @@ resource "aws_security_group" "rds" {
 
 resource "aws_db_subnet_group" "main" {
   name       = "${var.project_name}-db-subnet-group"
-  subnet_ids = data.aws_subnets.selected.ids
+  subnet_ids = local.ecs_enabled ? aws_subnet.private[*].id : data.aws_subnets.selected.ids
 
   tags = {
     Name    = "${var.project_name}-db-subnet-group"
@@ -93,8 +89,9 @@ resource "aws_db_instance" "postgres" {
   db_subnet_group_name   = aws_db_subnet_group.main.name
   vpc_security_group_ids = [aws_security_group.rds.id]
   publicly_accessible    = var.publicly_accessible
+  multi_az               = var.rds_multi_az
 
-  backup_retention_period = 7
+  backup_retention_period = 1
   skip_final_snapshot     = true
   deletion_protection     = false
 

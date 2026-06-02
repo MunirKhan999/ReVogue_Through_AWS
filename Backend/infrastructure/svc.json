@@ -1,0 +1,252 @@
+{
+    "services": [
+        {
+            "serviceArn": "arn:aws:ecs:us-east-1:687098277128:service/revogue-cluster/revogue-gateway",
+            "serviceName": "revogue-gateway",
+            "clusterArn": "arn:aws:ecs:us-east-1:687098277128:cluster/revogue-cluster",
+            "loadBalancers": [
+                {
+                    "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61",
+                    "containerName": "gateway",
+                    "containerPort": 8080
+                }
+            ],
+            "serviceRegistries": [
+                {
+                    "registryArn": "arn:aws:servicediscovery:us-east-1:687098277128:service/srv-vmbpyw5h7khf67jy"
+                }
+            ],
+            "status": "ACTIVE",
+            "desiredCount": 1,
+            "runningCount": 1,
+            "pendingCount": 0,
+            "launchType": "FARGATE",
+            "platformVersion": "LATEST",
+            "platformFamily": "Linux",
+            "taskDefinition": "arn:aws:ecs:us-east-1:687098277128:task-definition/revogue-gateway:2",
+            "deploymentConfiguration": {
+                "deploymentCircuitBreaker": {
+                    "enable": false,
+                    "rollback": false
+                },
+                "maximumPercent": 200,
+                "minimumHealthyPercent": 100,
+                "strategy": "ROLLING",
+                "bakeTimeInMinutes": 0
+            },
+            "deployments": [
+                {
+                    "id": "ecs-svc/4126778566503478516",
+                    "status": "PRIMARY",
+                    "taskDefinition": "arn:aws:ecs:us-east-1:687098277128:task-definition/revogue-gateway:2",
+                    "desiredCount": 1,
+                    "pendingCount": 0,
+                    "runningCount": 1,
+                    "failedTasks": 0,
+                    "createdAt": "2026-06-03T00:48:57.375000+05:00",
+                    "updatedAt": "2026-06-03T00:51:37.861000+05:00",
+                    "launchType": "FARGATE",
+                    "platformVersion": "1.4.0",
+                    "platformFamily": "Linux",
+                    "networkConfiguration": {
+                        "awsvpcConfiguration": {
+                            "subnets": [
+                                "subnet-0d37fd7e276962d18",
+                                "subnet-0561670e5ab8a6d73"
+                            ],
+                            "securityGroups": [
+                                "sg-0b746aec3e021b12f"
+                            ],
+                            "assignPublicIp": "DISABLED"
+                        }
+                    },
+                    "rolloutState": "COMPLETED",
+                    "rolloutStateReason": "ECS deployment ecs-svc/4126778566503478516 completed."
+                }
+            ],
+            "roleArn": "arn:aws:iam::687098277128:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+            "events": [
+                {
+                    "id": "5c64e701-9179-4b86-b2b9-f3a21dc5bf63",
+                    "createdAt": "2026-06-03T00:51:37.871000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "4d01c2ea-ab78-4348-afba-0e01c3922d56",
+                    "createdAt": "2026-06-03T00:51:37.869000+05:00",
+                    "message": "(service revogue-gateway) (deployment ecs-svc/4126778566503478516) deployment completed."
+                },
+                {
+                    "id": "0bf5a512-f5e9-4e6d-b365-55a2ce171e9d",
+                    "createdAt": "2026-06-03T00:50:35.912000+05:00",
+                    "message": "(service revogue-gateway, taskSet ecs-svc/3199403334161976310) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "a2e7a2ed-4be6-4103-959d-ca92d934ccf9",
+                    "createdAt": "2026-06-03T00:50:35.907000+05:00",
+                    "message": "(service revogue-gateway) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "c887abc7-f7ae-42d6-8e07-9098aacbb973",
+                    "createdAt": "2026-06-03T00:50:25.791000+05:00",
+                    "message": "(service revogue-gateway) has stopped 1 running tasks: (task c8730b9fd9594989b2d572d9c00b412f)."
+                },
+                {
+                    "id": "690c1dc0-73e7-4d7d-a44b-f513de8fd691",
+                    "createdAt": "2026-06-03T00:49:44.949000+05:00",
+                    "message": "(service revogue-gateway) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "3cf4a7d4-53d1-4ac0-93f6-53b463d3fa19",
+                    "createdAt": "2026-06-03T00:49:15.540000+05:00",
+                    "message": "(service revogue-gateway) has started 1 tasks: (task cdf37647f2434f6eb01ddf6760ff1d61)."
+                },
+                {
+                    "id": "55ccc9c1-26f1-42e4-aeb3-80363425dbd1",
+                    "createdAt": "2026-06-03T00:41:27.982000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "7506c390-5def-4dcc-b21d-82240c7b7a4d",
+                    "createdAt": "2026-06-02T18:41:04.324000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "922c63df-e86f-4e4f-8b32-414ff03767a4",
+                    "createdAt": "2026-06-02T12:40:36.734000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "22d4d9e2-27e8-4166-8fe8-0d12a317f42c",
+                    "createdAt": "2026-06-02T06:40:16.375000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "87ed118e-a161-494f-9668-fd24b0a4a567",
+                    "createdAt": "2026-06-02T00:40:08.201000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "a33c788d-475e-4051-b873-c53e80448278",
+                    "createdAt": "2026-06-02T00:40:08.200000+05:00",
+                    "message": "(service revogue-gateway) (deployment ecs-svc/3199403334161976310) deployment completed."
+                },
+                {
+                    "id": "d845dee2-cd2f-4041-b61c-623278c29425",
+                    "createdAt": "2026-06-02T00:39:07.691000+05:00",
+                    "message": "(service revogue-gateway, taskSet ecs-svc/3934451714017071313) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "ab6f2fbe-abea-4ef1-9b4f-c1326a7c96ca",
+                    "createdAt": "2026-06-02T00:39:07.686000+05:00",
+                    "message": "(service revogue-gateway) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "29e17dc2-df02-41a1-b3e1-e0ad31a5cefb",
+                    "createdAt": "2026-06-02T00:38:57.772000+05:00",
+                    "message": "(service revogue-gateway) has stopped 1 running tasks: (task 1276eaf582624947adf0064452c5a58e)."
+                },
+                {
+                    "id": "63469abc-1e8f-49a9-a277-b3a4431ce38a",
+                    "createdAt": "2026-06-02T00:38:16.956000+05:00",
+                    "message": "(service revogue-gateway) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "a5c6fde5-e79f-45e1-9404-6b9a30d920dd",
+                    "createdAt": "2026-06-02T00:37:45.150000+05:00",
+                    "message": "(service revogue-gateway) has started 1 tasks: (task c8730b9fd9594989b2d572d9c00b412f)."
+                },
+                {
+                    "id": "a554111b-7d03-42f1-8fd4-6711cee1c2b3",
+                    "createdAt": "2026-06-02T00:06:11.746000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "b570bd9f-e18a-4d2b-89fc-02bc4d7b5a55",
+                    "createdAt": "2026-06-02T00:06:11.745000+05:00",
+                    "message": "(service revogue-gateway) (deployment ecs-svc/3934451714017071313) deployment completed."
+                },
+                {
+                    "id": "c91be730-903f-4f89-9984-9ffc0801381e",
+                    "createdAt": "2026-06-02T00:04:49.757000+05:00",
+                    "message": "(service revogue-gateway, taskSet ecs-svc/7813619459952075916) has begun draining connections on 1 tasks."
+                },
+                {
+                    "id": "6ac8b6a0-2800-4b00-8e33-1c75aff0191c",
+                    "createdAt": "2026-06-02T00:04:49.752000+05:00",
+                    "message": "(service revogue-gateway) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "6766b5a3-4145-4757-80de-b125992387a0",
+                    "createdAt": "2026-06-02T00:04:39.602000+05:00",
+                    "message": "(service revogue-gateway) has stopped 1 running tasks: (task 1a73bf49ed774c5a8ee09d92d4cce4f7)."
+                },
+                {
+                    "id": "2591e19d-dbd5-4bd4-a07d-461caff364e5",
+                    "createdAt": "2026-06-02T00:03:57.753000+05:00",
+                    "message": "(service revogue-gateway) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "84e7926b-7404-4f15-ac92-48bec2040447",
+                    "createdAt": "2026-06-02T00:03:27.147000+05:00",
+                    "message": "(service revogue-gateway) has started 1 tasks: (task 1276eaf582624947adf0064452c5a58e)."
+                },
+                {
+                    "id": "1b6e3835-3e3d-4d1c-92bd-65b553d91494",
+                    "createdAt": "2026-06-01T23:12:20.453000+05:00",
+                    "message": "(service revogue-gateway) has reached a steady state."
+                },
+                {
+                    "id": "2543c14a-26dd-43b8-a3d3-f8abb6ef05fa",
+                    "createdAt": "2026-06-01T23:12:20.452000+05:00",
+                    "message": "(service revogue-gateway) (deployment ecs-svc/7813619459952075916) deployment completed."
+                },
+                {
+                    "id": "64cae5be-b44c-470a-963d-0e2d4bb7c68f",
+                    "createdAt": "2026-06-01T23:10:58.852000+05:00",
+                    "message": "(service revogue-gateway) registered 1 targets in (target-group arn:aws:elasticloadbalancing:us-east-1:687098277128:targetgroup/revogue-tg-gateway-pub/38c2b6ee5efcbb61)"
+                },
+                {
+                    "id": "43ce5502-79bb-46ca-bf11-9b538070c3db",
+                    "createdAt": "2026-06-01T23:10:28.455000+05:00",
+                    "message": "(service revogue-gateway) has started 1 tasks: (task 1a73bf49ed774c5a8ee09d92d4cce4f7)."
+                }
+            ],
+            "createdAt": "2026-06-01T23:10:15.420000+05:00",
+            "currentServiceRevisions": [
+                {
+                    "arn": "arn:aws:ecs:us-east-1:687098277128:service-revision/revogue-cluster/revogue-gateway/4126778566503478516",
+                    "requestedTaskCount": 1,
+                    "runningTaskCount": 1,
+                    "pendingTaskCount": 0
+                }
+            ],
+            "placementConstraints": [],
+            "placementStrategy": [],
+            "networkConfiguration": {
+                "awsvpcConfiguration": {
+                    "subnets": [
+                        "subnet-0d37fd7e276962d18",
+                        "subnet-0561670e5ab8a6d73"
+                    ],
+                    "securityGroups": [
+                        "sg-0b746aec3e021b12f"
+                    ],
+                    "assignPublicIp": "DISABLED"
+                }
+            },
+            "healthCheckGracePeriodSeconds": 0,
+            "schedulingStrategy": "REPLICA",
+            "deploymentController": {
+                "type": "ECS"
+            },
+            "createdBy": "arn:aws:iam::687098277128:user/DevOPs",
+            "enableECSManagedTags": false,
+            "propagateTags": "NONE",
+            "enableExecuteCommand": false,
+            "availabilityZoneRebalancing": "DISABLED",
+            "resourceManagementType": "CUSTOMER"
+        }
+    ],
+    "failures": []
+}
