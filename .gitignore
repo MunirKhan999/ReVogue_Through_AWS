@@ -46,3 +46,11 @@ terraform.tfstate.backup
 *.tfstate.backup
 .terraform.lock.hcl
 *.exe   
+# Terraform sensitive files
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.backup
+plan*.txt
+*.json
+*.txt

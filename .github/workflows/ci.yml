@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Backend/infrastructure/terraform
+        working-directory: Backend/infrastructure
 
     env:
       TF_VAR_db_password: ci-validate-only-password
