@@ -1,12 +1,12 @@
 "use client"
 
+import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
-import { ShoppingBag, Sparkles, ArrowRight, TrendingUp } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
+import { ArrowRight, ShoppingBag, Sparkles, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { Header } from "@/components/header"
-import { useToast } from "@/hooks/use-toast"
 
 export default function HomePage() {
   const router = useRouter()
@@ -63,11 +63,11 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-sm font-medium mb-6">
               <Sparkles className="h-4 w-4" />
-              <span>Revolutionizing Fashion E-Commerce</span>
+              <span>Revolutionizing Fashion E-Commerce ( SHU )</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance">
-              Discover Fashion That Speaks to You
+              Discover Fashion That Speaks to You(SHU Pakistan)
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
