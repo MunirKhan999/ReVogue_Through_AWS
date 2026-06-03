@@ -22,98 +22,78 @@ jobs:
     needs: ci
     runs-on: ubuntu-latest
     environment: production
-    defaults:
-      run:
-        working-directory: Backend/revogue-backend
-
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-          cache-dependency-path: Backend/revogue-backend/package-lock.json
-
-      - name: Write production env file
-        working-directory: Backend
-        run: |
-          cat > .env.production << EOF
-          NODE_ENV=production
-          PORT=3001
-          DB_HOST=${{ secrets.DB_HOST }}
-          DB_PORT=5432
-          DB_USERNAME=${{ secrets.DB_USERNAME }}
-          DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-          DB_NAME=${{ secrets.DB_NAME }}
-          DB_SSL=true
-          DB_SYNCHRONIZE=false
-          COGNITO_USER_POOL_ID=${{ secrets.COGNITO_USER_POOL_ID }}
-          COGNITO_CLIENT_ID=${{ secrets.COGNITO_CLIENT_ID }}
-          FRONTEND_URL=${{ secrets.FRONTEND_URL }}
-          API_GATEWAY_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
-          EOF
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: arn:aws:iam::687098277128:role/revogue-github-actions
+          aws-region: us-east-1
 
-      - name: Install SSM plugin
+      - name: Write env file to SSM Parameter Store
         run: |
-          curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" \
-            -o "session-manager-plugin.deb"
-          sudo dpkg -i session-manager-plugin.deb
+          aws ssm put-parameter \
+            --name "/revogue/production/env" \
+            --type "SecureString" \
+            --overwrite \
+            --value "
+          NODE_ENV=production
+          PORT=3001
+          DB_HOST=revogue-postgres.c07s4icweide.us-east-1.rds.amazonaws.com
+          DB_PORT=5432
+          DB_USERNAME=revogue_admin
+          DB_PASSWORD=<from-terraform.tfvars>
+          DB_NAME=revogue
+          DB_SSL=true
+          DB_SYNCHRONIZE=false
+          COGNITO_USER_POOL_ID=us-east-1_NogZEV71B
+          COGNITO_CLIENT_ID=2jrsmqbd94m9l944qrij2084q9
+          FRONTEND_URL=https://d2piuiryjaendq.cloudfront.net
+          API_GATEWAY_URL=https://e9fpi2tcsa.execute-api.us-east-1.amazonaws.com/prod
+          " \
+            --region us-east-1
 
       - name: Get EC2 Instance ID
         id: get-instance
         run: |
-          INSTANCE_ID=$(aws ec2 describe-instances \
-            --filters \
-              "Name=tag:Name,Values=${{ secrets.EC2_NAME_TAG }}" \
-              "Name=instance-state-name,Values=running" \
-            --query "Reservations[0].Instances[0].InstanceId" \
-            --output text \
-            --region ${{ secrets.AWS_REGION }})
+          INSTANCE_ID="i-019879fdbf90b0f17"
           echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT
-          echo "Found instance: $INSTANCE_ID"
+          echo "Found EC2 instance: $INSTANCE_ID"
 
       - name: Deploy via SSM
         run: |
-          aws ssm send-command \
+          COMMAND_ID=$(aws ssm send-command \
             --instance-ids "${{ steps.get-instance.outputs.instance_id }}" \
             --document-name "AWS-RunShellScript" \
-            --parameters 'commands=[
-              "cd /home/ec2-user/app || cd /opt/app",
+            --parameters commands='[
+              "set -e",
+              "cd /home/ec2-user/app",
               "git pull origin main",
-              "npm ci --prefix revogue-backend",
-              "npm run build --prefix revogue-backend",
-              "pm2 restart revogue-backend || pm2 start revogue-backend/dist/main.js --name revogue-backend"
+              "cd revogue-backend",
+              "npm ci",
+              "npm run build",
+              "pm2 restart revogue-backend || pm2 start dist/main.js --name revogue-backend"
             ]' \
-            --region ${{ secrets.AWS_REGION }} \
+            --region us-east-1 \
             --output text \
-            --query "Command.CommandId" > /tmp/command-id.txt
+            --query "Command.CommandId")
+          echo "$COMMAND_ID" > /tmp/command-id.txt
+          echo "SSM Command ID: $COMMAND_ID"
 
-      - name: Wait for deployment to complete
+      - name: Wait for deployment
         run: |
-          COMMAND_ID=$(cat /tmp/command-id.txt)
-          INSTANCE_ID="${{ steps.get-instance.outputs.instance_id }}"
-          
           aws ssm wait command-executed \
-            --command-id "$COMMAND_ID" \
-            --instance-id "$INSTANCE_ID" \
-            --region ${{ secrets.AWS_REGION }}
+            --command-id "$(cat /tmp/command-id.txt)" \
+            --instance-id "${{ steps.get-instance.outputs.instance_id }}" \
+            --region us-east-1
 
-      - name: Check deployment result
+      - name: Check result
         run: |
-          COMMAND_ID=$(cat /tmp/command-id.txt)
-          INSTANCE_ID="${{ steps.get-instance.outputs.instance_id }}"
-          
           aws ssm get-command-invocation \
-            --command-id "$COMMAND_ID" \
-            --instance-id "$INSTANCE_ID" \
-            --region ${{ secrets.AWS_REGION }} \
+            --command-id "$(cat /tmp/command-id.txt)" \
+            --instance-id "${{ steps.get-instance.outputs.instance_id }}" \
+            --region us-east-1 \
             --query "[StatusDetails, StandardOutputContent, StandardErrorContent]" \
             --output text
 
@@ -138,19 +118,19 @@ jobs:
       - name: Write production env for build
         run: |
           cat > revogue-frontend/.env.production << EOF
-          NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_COGNITO_USER_POOL_ID=${{ secrets.NEXT_PUBLIC_COGNITO_USER_POOL_ID }}
-          NEXT_PUBLIC_COGNITO_CLIENT_ID=${{ secrets.NEXT_PUBLIC_COGNITO_CLIENT_ID }}
+          NEXT_PUBLIC_API_URL=https://e9fpi2tcsa.execute-api.us-east-1.amazonaws.com/prod
+          NEXT_PUBLIC_COGNITO_USER_POOL_ID=us-east-1_NogZEV71B
+          NEXT_PUBLIC_COGNITO_CLIENT_ID=2jrsmqbd94m9l944qrij2084q9
           EOF
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: arn:aws:iam::687098277128:role/revogue-github-actions
+          aws-region: us-east-1
 
       - name: Build and deploy
         env:
-          FRONTEND_S3_BUCKET: ${{ secrets.FRONTEND_S3_BUCKET }}
-          FRONTEND_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.FRONTEND_CLOUDFRONT_DISTRIBUTION_ID }}
+          FRONTEND_S3_BUCKET: revogue-frontend-687098277128
+          FRONTEND_CLOUDFRONT_DISTRIBUTION_ID: E26RRIVPQVNL7H
         run: npm ci && npm run deploy
