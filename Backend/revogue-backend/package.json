@@ -20,7 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "update-images": "node scripts/update-product-images.js",
     "db:migrate": "node scripts/run-migrations.js",
-    "deploy:ec2": "node scripts/deploy-ec2.js"
+    "deploy:ec2": "npm run build && node scripts/deploy-ec2.js"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
