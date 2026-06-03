@@ -67,13 +67,7 @@ jobs:
             --instance-ids "${{ steps.get-instance.outputs.instance_id }}" \
             --document-name "AWS-RunShellScript" \
             --parameters commands='[
-              "set -e",
-              "cd /home/ec2-user/app",
-              "git pull origin main",
-              "cd revogue-backend",
-              "npm ci",
-              "npm run build",
-              "pm2 restart revogue-backend || pm2 start dist/main.js --name revogue-backend"
+              "sudo su - ec2-user -c \"cd /home/ec2-user/app && git pull origin main && cd Backend/revogue-backend && npm ci && npm run build && pm2 restart revogue-backend || pm2 start dist/main.js --name revogue-backend\""
             ]' \
             --region us-east-1 \
             --output text \
