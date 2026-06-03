@@ -44,7 +44,7 @@ jobs:
           ls -R Backend/services || echo "Directory Backend/services not found"
 
       - name: Build Docker image
-        working-directory: E:\Coding\revogue\Backend\services\gateway
+        working-directory: Backend/services/gateway
         run: |
           docker build -t ${{ env.ECR_REPOSITORY }}:latest .
       
