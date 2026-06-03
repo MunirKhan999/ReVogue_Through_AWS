@@ -40,7 +40,8 @@ cd ../../revogue-backend && npm run db:migrate
 
 ```bash
 # Push to main → GitHub Actions deploy.yml
-# Or locally:
+# (recommended) GitHub Actions handles backend and frontend deploys automatically.
+# Or locally if you need a manual override:
 cd Backend/revogue-backend && npm run deploy:ec2
 cd Frontend && npm run deploy
 ```

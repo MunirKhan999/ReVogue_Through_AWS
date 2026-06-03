@@ -88,12 +88,14 @@ npm run db:migrate
 ## Manual deploy
 
 ```bash
-# Backend → EC2
+# Recommended: let GitHub Actions handle production deployment via .github/workflows/deploy.yml.
+
+# Backend → EC2 (manual override only)
 export EC2_HOST=$(terraform output -raw ec2_elastic_ip)
 export EC2_KEY_PATH=~/.ssh/revogue-key.pem
 cd Backend/revogue-backend && npm run deploy:ec2
 
-# Frontend → S3
+# Frontend → S3 (manual override only)
 export FRONTEND_S3_BUCKET=$(terraform output -raw frontend_s3_bucket)
 export FRONTEND_CLOUDFRONT_DISTRIBUTION_ID=$(terraform output -raw frontend_cloudfront_distribution_id)
 # Build with .env.production from: terraform output frontend_env_snippet
